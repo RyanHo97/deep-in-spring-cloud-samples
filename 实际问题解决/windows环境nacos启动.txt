@@ -1,0 +1,20 @@
+本地nacos版本1.3.1
+
+1·Windows启动
+
+Windows启动命令(standalone代表着单机模式运行，非集群模式):
+cmd startup.cmd -m standalone
+git bash下可用linux的启动方式：
+sh startup.sh -m standalone
+
+2·启动服务器出现
+//bin/java  -Xms256m -Xmx256m -Xmn256m -Dnacos.standalone=true -Dnacos.member.list= -Djava.ext.dirs=//jre/lib/ext://lib/ext -Xloggc:/c/nacos/logs/nacos_gc.log -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=100M -Dloader.path=/c/nacos/plugins/health,/c/nacos/plugins/cmdb -Dnacos.home=/c/nacos -jar /c/nacos/target/nacos-server.jar  --spring.config.location=classpath:/,classpath:/config/,file:./,file:./config/,file:/c/nacos/conf/ --logging.config=/c/nacos/conf/nacos-logback.xml --server.max-http-header-size=524288
+nohup: failed to run command '//bin/java': No such file or directory
+
+原因是Java环境变量名为小写java_home。改成大写后解决。
+
+3·访问http://localhost:8848 没有出现控制台的问题。
+
+书中未提及控制台地址（在此之前只实际用过erueka）
+控制台地址为：http://localhost:8848/nacos/index.html
+
