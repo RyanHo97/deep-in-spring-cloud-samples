@@ -4,3 +4,11 @@
 所以可以先创建spring web模块，再更改springboot版本，导入nacos。
 pom.xml文件可参考Jim Fang已经写好的示例代码。
 路径：https://github.com/fangjian0423/deep-in-spring-cloud-samples/blob/main/chapter02/spring-cloud-alibaba-nacos-provider/pom.xml
+-----------------------------------------------------------------
+Jim Fang已给出更好的解决方式（2021/1/13）：
+实测此方法完美解决SpringBoot 2.3.7的版本，不能勾选创建Nacos Service Discovery问题。
+
+·如果用的跟我一样是Intellij IDEA，可以在Spring Initializr选项中Choose Initializr Server URL。
+ 在Custom中写上：https://start.aliyun.com
+
+·也可以在https://start.aliyun.com/bootstrap.html创建后导入IDEA中。
