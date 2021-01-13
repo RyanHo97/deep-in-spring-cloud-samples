@@ -1,0 +1,6 @@
+在创建Nacos Discovery Provider项目过程中
+由于Spring Initializr的SpringBoot目前最低可选版本为2.3.7的版本，而nacos的组件需要2.2.0-2.3.0版本。
+
+所以可以先创建spring web模块，再更改springboot版本，导入nacos。
+pom.xml文件可参考Jim Fang已经写好的示例代码。
+路径：https://github.com/fangjian0423/deep-in-spring-cloud-samples/blob/main/chapter02/spring-cloud-alibaba-nacos-provider/pom.xml
